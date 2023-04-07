@@ -4,10 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 from mpl_toolkits.mplot3d import Axes3D
-
-from stl import mesh
-from scipy.spatial import Delaunay
-
+#from stl import mesh
+#from scipy.spatial import Delaunay
 import surf2stl
 
 MAXITERATIONS = 100000
@@ -122,7 +120,7 @@ def PlotAtractor(x,y,z):
             surf2stl.write('result.stl', X, Y, Z)
             
             
-
+    #Something go wrong here ¯\_(ツ)_/¯, while use this code we use surf2stl(modified)
     #for i in range(MAXITERATIONS):
     #    if i > 100:
     #        points = np.column_stack((np.array(x), np.array(y), np.array(z)))
@@ -140,26 +138,3 @@ def PlotAtractor(x,y,z):
     #        surface.save('example.stl')
 
 CreatingAttractor()
-
-
-#def PlotAtractor(n,fx,fy,xmin,xmax,ymin,ymax,x,y):
-#    width, height = 500, 500
-#    image = Image.new("RGBA", (width, height))
-#    draw = ImageDraw.Draw(image)    
-#    for i in range(MAXITERATIONS):
-#        ix = width * (x[i] - xmin) / (xmax - xmin)
-#        iy = height * (y[i] - ymin) / (ymax - ymin)
-#        if i > 100:
-#            draw.point([ix, iy], fill="black")
-#    image.show()
-
-#------------------------
-
-#import random as rnd
-#from itertools import count
-
-#for i in count(0):
-#    sus = rnd.randint(1,10)
-#    print(" ")
-#    for j in range(sus):
-#        print("*")
